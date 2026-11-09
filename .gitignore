@@ -1,0 +1,21 @@
+# 构建产物
+bin/
+obj/
+publish/
+run_tmp/
+
+# 测试残留
+err*.txt
+out*.txt
+
+# ffmpeg 二进制（开源仓库不含，见 README 说明）
+ffmpeg.exe
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# 常见 IDE
+.idea/
+.vscode/
