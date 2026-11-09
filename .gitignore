@@ -19,3 +19,7 @@ ffmpeg.exe
 # 常见 IDE
 .idea/
 .vscode/
+publish2/
+*.log
+run_fix.*
+crash.log

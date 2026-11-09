@@ -28,15 +28,18 @@
         <TextBlock x:Name="OutputDirText" Grid.Row="1" Foreground="#555555" Margin="0,0,0,8"
                    TextWrapping="Wrap"/>
 
-        <ListView x:Name="FileList" Grid.Row="2" Background="White" BorderBrush="#DDDDDD">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="文件" Width="230" DisplayMemberBinding="{Binding File}"/>
-                    <GridViewColumn Header="状态" Width="120" DisplayMemberBinding="{Binding Status}"/>
-                    <GridViewColumn Header="信息" Width="470" DisplayMemberBinding="{Binding Info}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid x:Name="FileList" Grid.Row="2"
+                  AutoGenerateColumns="False" IsReadOnly="True"
+                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False"
+                  HeadersVisibility="Column" GridLinesVisibility="Horizontal"
+                  Background="White" BorderBrush="#DDDDDD" RowHeaderWidth="0"
+                  AlternatingRowBackground="#FAFAFA" RowBackground="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="文件" Binding="{Binding File}" Width="230"/>
+                <DataGridTextColumn Header="状态" Binding="{Binding Status}" Width="120"/>
+                <DataGridTextColumn Header="信息" Binding="{Binding Info}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
         <StatusBar Grid.Row="3" Margin="0,8,0,0" Background="Transparent">
             <StatusBarItem>
